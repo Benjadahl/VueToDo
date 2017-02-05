@@ -1,0 +1,18 @@
+<head>
+  <title>Vue.js to do list</title>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+  <h3>To do:</h3>
+  <div id="vueApp">
+    <i>Enter description for a task below... Press enter to submit it</i>
+    <br />
+    <input type="text" v-model="input" v-on:keyDown.enter="addNewTask"/>
+
+    <ol>
+      <todotask v-for="task in tasks" :task="task"></todotask>
+    </ol>
+  </div>
+
+  <script src="main.js"></script>
+</body>
