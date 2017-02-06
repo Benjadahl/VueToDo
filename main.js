@@ -1,3 +1,4 @@
+//The json explorere object from the earlier project
 Vue.component("jsonexplorer", {
   props:['object'],
 
@@ -20,6 +21,7 @@ Vue.component("jsonexplorer", {
   }
 });
 
+//The element that creates a task in the to do list
 Vue.component("todotask" ,{
   props:["task"],
   data: function () {
@@ -35,6 +37,7 @@ Vue.component("todotask" ,{
   }
 });
 
+//The main Vue instance
 var app = new Vue({
   el: "#vueApp",
   data: {
