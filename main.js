@@ -54,6 +54,11 @@ var app = new Vue({
       ],
       nonImportant:[
         "Do the dishes"
+      ],
+      school:[
+        "Do homework",
+        "Do assignments",
+        "Pack your bag"
       ]
     }
   },
