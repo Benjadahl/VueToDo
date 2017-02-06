@@ -3,15 +3,17 @@
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
-  <h3>To do:</h3>
+
   <div id="vueApp">
     <i>Enter description for a task below... Press enter to submit it</i>
     <br />
     <input type="text" v-model="input" v-on:keyDown.enter="addNewTask"/>
-
-    <ol>
-      <todotask v-for="task in tasks" :task="task"></todotask>
-    </ol>
+    Category: <jsonexplorer :object="tasks" v-on:new-item-selected="updateCategory"></jsonexplorer>
+    <h2>To do:</h2>
+    <div v-for="(value, key) in  tasks">
+      <h3> {{ key }} </h3>
+      <todotask v-for="task in value" :task="task"></todotask>
+    </div>
   </div>
 
   <script src="main.js"></script>
