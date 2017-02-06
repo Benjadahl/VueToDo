@@ -29,10 +29,14 @@ Vue.component("todotask" ,{
       shown: true
     }
   },
-  template:"<div v-if='shown'><input v-on:change='test' type='checkbox'/>{{ task }}<br /></div>",
+  template:"<div v-if='shown'><input v-on:change='checked' type='checkbox'/>{{ task }}<br /></div>",
   methods: {
-    test: function () {
-      this.shown = false;
+    checked: function () {
+      //Added variable to fix block scoping of this keyword
+      let self = this;
+      setTimeout( function () {
+        self.shown = false;
+      }, 100);
     }
   }
 });
